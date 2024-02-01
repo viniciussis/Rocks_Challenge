@@ -31,7 +31,20 @@ async function getAuthSheets() {
   };
 }
 
-app.post("/updateSituation", async (req, res) => {
+/* Logging a message to indicate the server is running and provides instructions for updating student situations */
+app.get("/", async (req, res) => {
+  console.log("The server is running");
+  res
+    .status(200)
+    .send(
+      "The server is running, go to the endpoint: http://localhost:3001/updateSituation"
+    );
+});
+
+/* 
+It's important to mention that, in terms of RESTful best practices, the use of GET requests is generally associated with read operations and not server-side modifications. However, for the purpose of automatic triggering, I used GET.
+*/
+app.get("/updateSituation", async (req, res) => {
   // Retrieve necessary objects from getAuthSheets function
   const { googleSheets, auth, spreadsheetId } = await getAuthSheets();
 
@@ -91,7 +104,9 @@ app.post("/updateSituation", async (req, res) => {
     });
 
     // Log success message and send response to the client
-    console.log("Student situation updated successfully");
+    console.log(
+      "Student situation updated successfully. Go to the google sheets!"
+    );
     res.status(200).send("Student situation updated successfully");
   } catch (error) {
     // Log error message and send internal server error response
@@ -101,4 +116,8 @@ app.post("/updateSituation", async (req, res) => {
 });
 
 // Start the server on port 3001
-app.listen(3001, () => console.log("The server is running on port 3001"));
+app.listen(3001, () =>
+  console.log(
+    "The server is running on port 3001. Go to the endpoint: http://localhost:3001/updateSituation"
+  )
+);
