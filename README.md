@@ -35,8 +35,11 @@ npm start
 The server will run on port 3001. Access it by navigating to http://localhost:3001 in your browser.
 
 ## API Endpoint
-POST /updateSituation:
-This endpoint triggers the update of student situations in the specified Google Sheet. The sheet's structure is assumed to have relevant data starting from the 4th row. The script calculates averages, updates approval status, and adds a final grade (if applicable).
+This endpoint initiates the update of student situations within the designated Google Sheet. The sheet is expected to contain pertinent data starting from the 4th row. The accompanying script performs calculations for averages, updates approval statuses, and incorporates a final grade (if applicable).
+
+To execute the code and trigger the update, access the following endpoint:
+
+Endpoint URL: http://localhost:3001/updateSituation
 
 ### Important Notes
 - Ensure the Google Sheet contains valid and consistent data, and its structure matches the assumptions made in the script.
