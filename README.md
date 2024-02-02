@@ -34,6 +34,9 @@ npm start
 
 The server will run on port 3001. Access it by navigating to http://localhost:3001 in your browser.
 
+### Optional
+I recently added a simple front-end HTML for visualizing our application. You can choose to open the index.html in your browser and click on the main button to run the code. Alternatively, you may use tools like Live Server to open the HTML and execute the code. Ensure the server is running before clicking the button.
+
 ### Important Notes
 - Ensure the Google Sheet contains valid and consistent data, and its structure matches the assumptions made in the script.
 - Any errors encountered during the process will be logged to the console and result in a 500 Internal Server Error response.
