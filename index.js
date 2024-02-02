@@ -1,8 +1,12 @@
 const express = require("express");
 const { google } = require("googleapis");
+const cors = require("cors")
 
+/* Adding middleware to parse incoming JSON requests and middleware to enable Cross-Origin Resource Sharing (CORS) with a wildcard (*)
+allowing any origin to access the resources. */
 const app = express();
 app.use(express.json());
+app.use(cors({origin: '*'}))
 
 async function getAuthSheets() {
   // Create authentication client using credentials.json file
